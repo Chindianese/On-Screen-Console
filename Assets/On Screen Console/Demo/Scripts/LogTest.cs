@@ -46,5 +46,25 @@ namespace Chindianese.OnScreenConsole.Demo
                 string nullString = nullObject.name;
             }
         }
+        private void Start()
+        {
+            {
+                log = false;
+                Debug.Log("Log Test");
+            }
+            {
+                error = false;
+                Debug.LogError("Error Test");
+            }
+            {
+                warning = false;
+                Debug.LogWarning("Warning Test");
+            }
+            {
+                exception = false;
+                GameObject nullObject = null;
+                string nullString = nullObject.name;
+            }
+        }
     }
 }

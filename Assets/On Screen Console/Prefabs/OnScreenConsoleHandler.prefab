@@ -45,5 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   consoleVisible: 1
   backgroundVisible: 1
-  fontSize: 15
   consoleButtonVisible: 1
+  fontSize: 31
+  toggleButtonSize: {x: 141.6, y: 78}
+  clearButtonSize: {x: 170.9, y: 78}
+  buttonFontSize: 32
