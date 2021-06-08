@@ -10,8 +10,29 @@ namespace Chindianese.OnScreenConsole
     [ExecuteInEditMode]
     public class OnScreenConsoleHandler : MonoBehaviour
     {
+        [Header("Settings")]
+        [SerializeField]
+        private bool consoleVisible = true;
+        [SerializeField]
+        private bool backgroundVisible = false;
+        [SerializeField]
+        private int fontSize = 15;
+        [SerializeField]
+        [Tooltip("GUI button to toggle console")]
+        private bool consoleButtonVisible = true;
+        //
         string myLog;
         Queue myLogQueue = new Queue();
+
+
+        public void ToggleConsole()
+        {
+            consoleVisible = !consoleVisible;
+        }
+        public void ToggleBackground()
+        {
+            backgroundVisible = !backgroundVisible;
+        }
 
         void OnEnable()
         {
@@ -56,11 +77,35 @@ namespace Chindianese.OnScreenConsole
                 myLog += mylog;
             }
         }
-
+        Vector2 scrollPosition;
         void OnGUI()
         {
-            //  GUI.Box(new Rect(0, 0, Screen.width, myLogQueue.Count * 20), "Console Background");
+            if(consoleButtonVisible)
+            {
+                GUI.color = consoleVisible ? Color.red : Color.green;
+                if (GUI.Button(new Rect(Screen.width-50, 0, 50, 20), "Toggle"))
+                    ToggleConsole();
+                GUI.color = Color.white;
+            }
+            if (!consoleVisible) return;
+            if (myLog == null || myLog.Length <= 0) return;
+            float logYOffset = 20;
+            GUIContent mgc = new GUIContent(myLog);
+            float myHeight = (myLog.Length > 0) ? (new GUIStyle(GUI.skin.label)).CalcHeight(mgc, Screen.width) : 0;
+            if (backgroundVisible)            
+                GUI.Box(new Rect(0, logYOffset, Screen.width, Mathf.Min(myHeight, Screen.height)), "");            
+            GUI.color = Color.white;
+            if (GUI.Button(new Rect(0, 0, 50, 20), "Clear"))            
+                ClearConsole();
+
+            Rect viewport = new Rect(0, logYOffset, Screen.width - 30, myHeight);
+            scrollPosition = GUI.BeginScrollView(new Rect(0, logYOffset, Screen.width, Screen.height), scrollPosition, viewport);
+            GUI.color = Color.white;
+            GUI.skin.label.fontSize = fontSize;
             GUILayout.Label(myLog);
+            // End the scroll view that we began above.
+            GUI.EndScrollView();
+
         }
 
         private string WrapInColor(string s, Color col)
