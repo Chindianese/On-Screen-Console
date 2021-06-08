@@ -48,7 +48,7 @@ namespace Chindianese.OnScreenConsole
                 case LogType.Assert:
                     break;
             }
-            
+
             myLogQueue.Enqueue(formattedLog); // Add to queue
             myLog = string.Empty;
             foreach (string mylog in myLogQueue)
@@ -59,13 +59,18 @@ namespace Chindianese.OnScreenConsole
 
         void OnGUI()
         {
-           //  GUI.Box(new Rect(0, 0, Screen.width, myLogQueue.Count * 20), "Console Background");
+            //  GUI.Box(new Rect(0, 0, Screen.width, myLogQueue.Count * 20), "Console Background");
             GUILayout.Label(myLog);
         }
 
         private string WrapInColor(string s, Color col)
         {
             return $"<color=#{ColorUtility.ToHtmlStringRGB(col)}>{s}</color>";
+        }
+        public void ClearConsole()
+        {
+            myLog = "";
+            myLogQueue.Clear();
         }
     }
 }
