@@ -155,7 +155,7 @@ MonoBehaviour:
   consoleVisible: 1
   backgroundVisible: 1
   fontSize: 14
-  consoleButton: 1
+  consoleButtonVisible: 1
 --- !u!4 &170637782
 Transform:
   m_ObjectHideFlags: 0
