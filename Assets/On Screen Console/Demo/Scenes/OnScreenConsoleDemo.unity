@@ -353,34 +353,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4793241099876118852, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
-      propertyPath: fontSize
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793241099876118852, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
-      propertyPath: buttonSize
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793241099876118852, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
-      propertyPath: buttonFontSize
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793241099876118852, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
-      propertyPath: clearButtonSize.x
-      value: 170.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793241099876118852, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
-      propertyPath: clearButtonSize.y
-      value: 78
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793241099876118852, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
-      propertyPath: toggleButtonSize.x
-      value: 141.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793241099876118852, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
-      propertyPath: toggleButtonSize.y
-      value: 78
-      objectReference: {fileID: 0}
     - target: {fileID: 4793241099876118853, guid: b82eb73265cbbe241919d0c74d3d18ff, type: 3}
       propertyPath: m_Name
       value: OnScreenConsoleHandler
